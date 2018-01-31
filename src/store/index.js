@@ -1,18 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import * as actions from './actions'
-import cart from './modules/cart'
-import products from './modules/products'
+// import * as actions from './actions'
+import idols from './modules/idols'
 
 Vue.use(Vuex)
 
-const debug = process.env.NODE_ENV !== 'production'
-
 export default new Vuex.Store({
-  actions,
+  // actions,
   modules: {
-    cart,
-    products
+    idols,
   },
-  strict: debug,
+  strict: process.env.NODE_ENV !== 'production',
 })
