@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="kt-app">
+  <div id="app" class="kt-app" v-bind:class="{ 'hold': toggle }">
     <div class="kt-side">
       side menu
       <ul>
@@ -12,7 +12,7 @@
       </ul>
     </div>
     <div class="kt-main" v-bind:class="{ 'open': toggle }">
-      <button class="btn btn-outline-success" type="button" v-on:click="toggleHandler">
+      <button class="btn btn-outline-success toggler" type="button" v-on:click="toggleHandler">
         button
       </button>
       <router-view></router-view>
@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'app',
+  name: 'App',
 
   data() {
     return {
@@ -32,6 +32,7 @@ export default {
 
   methods: {
     toggleHandler() {
+      document.body.classList.toggle('hold')
       this.toggle = !this.toggle
     }
   }
@@ -51,6 +52,10 @@ body {
   background-color: #000;
 }
 
+.hold {
+  overflow: hidden;
+}
+
 .kt-side {
   position: absolute;
   top: 0;
@@ -68,10 +73,20 @@ body {
   background-color: #000;
   color: #fff;
   transition: transform 300ms cubic-bezier(0.2, 0.7, 0.5, 1);
-  /* transform: translateX(250px); */
 }
 
 .open {
   transform: translateX(250px);
+}
+
+.toggler {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  /* padding: 4px 12px;
+  color: #fff;
+  background-color: #000;
+  border-radius: 0; */
 }
 </style>
