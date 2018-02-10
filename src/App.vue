@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="kt-app" v-bind:class="{ 'hold': toggle }">
+  <div class="kt-app">
     <div class="kt-side">
       side menu
       <ul>
@@ -13,7 +13,7 @@
     </div>
     <div class="kt-main" v-bind:class="{ 'open': toggle }">
       <button class="btn btn-outline-success toggler" type="button" v-on:click="toggleHandler">
-        button
+        <font-awesome-icon :icon="iconBar" /> Menu
       </button>
       <router-view></router-view>
     </div>
@@ -21,8 +21,21 @@
 </template>
 
 <script>
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+import { faBars } from '@fortawesome/fontawesome-free-solid'
+
 export default {
   name: 'App',
+
+  components: {
+    FontAwesomeIcon
+  },
+
+  computed: {
+    iconBar () {
+      return faBars
+    }
+  },
 
   data() {
     return {
