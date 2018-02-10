@@ -1,18 +1,18 @@
 <template>
   <div class="">
     <template v-for="(panel, idx) in panelMap" >
-    <div class="panel position-relative w-100 d-table" v-bind:key="idx">
-      <div class="panel-back position-absolute w-100 h-100">
-        <div class="panel-back-img h-100" v-bind:class="[`panel-back-img-${panel}`]" />
-      </div>
-      <div class="d-table-cell align-middle">
-        <div class="d-flex">
-          <div class="position-relative">
-            <h1>He</h1>
+      <div class="panel position-relative w-100 d-table" v-bind:key="idx">
+        <div class="panel-back position-absolute h-100 w-100">
+          <div class="panel-back-img h-100 w-100" v-bind:class="[`panel-back-img-${panel}`]" />
+        </div>
+        <div class="d-table-cell align-middle">
+          <div class="d-flex">
+            <div class="position-relative">
+              <h1>He</h1>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </template>
   </div>
 </template>
