@@ -5,15 +5,18 @@ const state = {
   isFetching: false,
   list: [],
 }
+
 const getters = {
 }
+
 const actions = {
   fetchIdols ({ commit }) {
     commit(types.REQUEST_IDOLS)
     API.getIdols()
        .then(idols => commit(types.RECEIVE_IDOLS, { idols }))
-  }
+  },
 }
+
 const mutations = {
   [types.REQUEST_IDOLS] (state) {
     state.isFetching = true
@@ -22,7 +25,7 @@ const mutations = {
   [types.RECEIVE_IDOLS] (state, { idols }) {
     state.isFetching = false
     state.list = idols
-  }
+  },
 }
 
 export default {
