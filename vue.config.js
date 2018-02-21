@@ -5,7 +5,7 @@ module.exports = {
     stats: "minimal",
     proxy: {
       "/api/*": {
-        target: "https://ktube.bookstour.com",
+        target: "https://api.ktube.xyz",
         secure: false,
         changeOrigin: true
       }
