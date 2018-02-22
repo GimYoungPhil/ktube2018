@@ -1,34 +1,29 @@
 <template>
   <div>
-    idols
-    <idol-list v-bind:list="idols.list" />
+    idol Detail
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
-import IdolList from './idols/IdolList.vue'
 
 export default {
-  name: 'Idols',
-
-  components: {
-    IdolList,
-  },
+  name: 'Idol',
 
   computed: mapState([
-    'idols'
+    'idolDetail'
   ]),
 
   methods: {
     ...mapActions([
-      'fetchIdols'
+      'fetchIdol'
     ])
   },
 
   mounted() {
-    this.fetchIdols()
-  },
+    const { idolKey } = this.$route.params
+    this.fetchIdol(idolKey)
+  }
 }
 </script>
 

@@ -6,14 +6,13 @@ const state = {
   list: [],
 }
 
-const getters = {
-}
+const getters = {}
 
 const actions = {
   fetchIdols ({ commit }) {
     commit(types.REQUEST_IDOLS)
     API.getIdols()
-       .then(idols => commit(types.RECEIVE_IDOLS, { idols }))
+      .then(idols => commit(types.RECEIVE_IDOLS, { idols }))
   },
 }
 
