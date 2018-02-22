@@ -16,13 +16,15 @@ export default {
 
   methods: {
     ...mapActions([
-      'fetchIdolDetail'
-    ])
+      'fetchIdolDetail',
+      'fetchIdolVideoList',
+    ]),
   },
 
   mounted() {
     const { idolKey } = this.$route.params
     this.fetchIdolDetail(idolKey)
+    this.fetchIdolVideoList(idolKey)
   }
 }
 </script>

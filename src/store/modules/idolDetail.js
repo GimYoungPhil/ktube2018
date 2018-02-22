@@ -10,7 +10,6 @@ const getters = {}
 
 const actions = {
   fetchIdolDetail ({ commit }, idolKey) {
-    console.log(idolKey)
     commit(types.REQUEST_IDOL)
     API.getIdolDetail({ idolKey })
       .then(idol => commit(types.RECEIVE_IDOL, { idolKey, idol }))
