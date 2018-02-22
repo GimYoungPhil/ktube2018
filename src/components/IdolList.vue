@@ -1,33 +1,33 @@
 <template>
   <div>
     idols
-    <idol-list v-bind:list="idols.list" />
+    <idol-item-list v-bind:list="idolList.list" />
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
-import IdolList from './idols/IdolList.vue'
+import IdolItemList from './idols/IdolItemList.vue'
 
 export default {
-  name: 'Idols',
+  name: 'IdolList',
 
   components: {
-    IdolList,
+    IdolItemList,
   },
 
   computed: mapState([
-    'idols'
+    'idolList'
   ]),
 
   methods: {
     ...mapActions([
-      'fetchIdols'
+      'fetchIdolList'
     ])
   },
 
   mounted() {
-    this.fetchIdols()
+    this.fetchIdolList()
   },
 }
 </script>

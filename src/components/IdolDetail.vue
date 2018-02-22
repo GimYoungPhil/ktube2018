@@ -8,7 +8,7 @@
 import { mapState, mapActions } from 'vuex'
 
 export default {
-  name: 'Idol',
+  name: 'IdolDetail',
 
   computed: mapState([
     'idolDetail'
@@ -16,13 +16,13 @@ export default {
 
   methods: {
     ...mapActions([
-      'fetchIdol'
+      'fetchIdolDetail'
     ])
   },
 
   mounted() {
     const { idolKey } = this.$route.params
-    this.fetchIdol(idolKey)
+    this.fetchIdolDetail(idolKey)
   }
 }
 </script>

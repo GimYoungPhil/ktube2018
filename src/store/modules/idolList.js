@@ -9,9 +9,9 @@ const state = {
 const getters = {}
 
 const actions = {
-  fetchIdols ({ commit }) {
+  fetchIdolList ({ commit }) {
     commit(types.REQUEST_IDOLS)
-    API.getIdols()
+    API.getIdolList()
       .then(idols => commit(types.RECEIVE_IDOLS, { idols }))
   },
 }

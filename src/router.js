@@ -3,8 +3,8 @@ import VueRouter from 'vue-router'
 import Home from './components/Home.vue'
 import Foo from './components/Foo.vue'
 import Bar from './components/Bar.vue'
-import Idols from './components/Idols.vue'
-import Idol from './components/Idol.vue'
+import IdolList from './components/IdolList.vue'
+import IdolDetail from './components/IdolDetail.vue'
 
 Vue.use(VueRouter)
 
@@ -12,8 +12,8 @@ const routes = [
   { path: '/', component: Home },
   { path: '/foo', component: Foo },
   { path: '/bar', component: Bar },
-  { path: '/idols', component: Idols },
-  { path: '/idol/:idolKey', component: Idol },
+  { path: '/idols', component: IdolList },
+  { path: '/idol/:idolKey', component: IdolDetail },
 ]
 
 const router = new VueRouter({

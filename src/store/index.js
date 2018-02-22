@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 // import * as actions from './actions'
-import idols from './modules/idols'
+import idolList from './modules/idolList'
 import idolDetail from './modules/idolDetail'
 
 Vue.use(Vuex)
@@ -9,7 +9,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   // actions,
   modules: {
-    idols,
+    idolList,
     idolDetail,
   },
   strict: process.env.NODE_ENV !== 'production',

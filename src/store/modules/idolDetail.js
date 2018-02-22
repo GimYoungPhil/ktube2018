@@ -9,10 +9,10 @@ const state = {
 const getters = {}
 
 const actions = {
-  fetchIdol ({ commit }, idolKey) {
+  fetchIdolDetail ({ commit }, idolKey) {
     console.log(idolKey)
     commit(types.REQUEST_IDOL)
-    API.getIdol({ idolKey })
+    API.getIdolDetail({ idolKey })
       .then(idol => commit(types.RECEIVE_IDOL, { idolKey, idol }))
   },
 }
