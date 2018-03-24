@@ -1,8 +1,15 @@
-/* html,
 body {
-  overflow-x: hidden;
+  position: relative;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-html {
+body {
+  overflow: auto;
   background-color: #000;
-} */
+}
+
+.hold {
+  overflow: hidden;
+}

@@ -1,19 +1,18 @@
 <template>
-  <div class="kt-app">
-    <div class="kt-side">
-      side menu
-      <ul>
-        <li>menu1</li>
-        <li>menu2</li>
-        <li>menu3</li>
-        <li>menu4</li>
-        <li>menu5</li>
-        <li>menu6</li>
-      </ul>
+  <div class="ktube-app">
+    <div class="ktube-side">
+      <AppSidebar/>
     </div>
-    <div class="kt-main" v-bind:class="{ 'open': toggle }">
-      <button class="btn btn-outline-success toggler" type="button" v-on:click="toggleHandler">
-        <font-awesome-icon :icon="iconBar" /> Menu
+    <div
+      class="ktube-stage"
+      v-bind:class="{ 'ktube-stage-open': open }"
+    >
+      <button
+        class="btn btn-outline-success btn-toggler"
+        type="button"
+        v-on:click="toggleOpen"
+      >
+        <font-awesome-icon :icon="iconBar"/> Menu
       </button>
       <router-view></router-view>
     </div>
@@ -21,55 +20,44 @@
 </template>
 
 <script>
+import AppSidebar from '@/components/app/AppSidebar.vue'
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 import { faBars } from '@fortawesome/fontawesome-free-solid'
+import _ from 'underscore'
 
 export default {
   name: 'App',
 
   components: {
-    FontAwesomeIcon
+    AppSidebar,
+    FontAwesomeIcon,
+  },
+
+  data() {
+    return {
+      open: false,
+    }
   },
 
   computed: {
     iconBar () {
       return faBars
-    }
-  },
-
-  data() {
-    return {
-      toggle: false,
-    }
+    },
   },
 
   methods: {
-    toggleHandler() {
-      document.body.classList.toggle('hold')
-      this.toggle = !this.toggle
-    }
-  }
+    toggleOpen() {
+      this.open = !this.open
+      _.delay(function() {
+        document.body.classList.toggle('hold')
+      }, this.open ? 0 : 300)
+    },
+  },
 }
 </script>
 
-<style>
-body {
-  background-color: #000;
-}
-
-.kt-app {
-  position: relative;
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #000;
-}
-
-.hold {
-  overflow: hidden;
-}
-
-.kt-side {
+<style >
+.ktube-side {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -78,21 +66,19 @@ body {
   width: 250px;
   padding-top: 30px;
   background-color: #000;
-  color: #fff;
 }
 
-.kt-main {
+.ktube-stage {
   position: relative;
   background-color: #000;
-  color: #fff;
   transition: transform 300ms cubic-bezier(0.2, 0.7, 0.5, 1);
 }
 
-.open {
+.ktube-stage-open {
   transform: translateX(250px);
 }
 
-.toggler {
+.btn-toggler {
   position: absolute;
   top: 20px;
   left: 20px;
