@@ -49,7 +49,7 @@ export default {
 }
 
 .panel-back-img-1 {
-  background-image: url("./home/lilwayne.jpg")
+  background-image: url("./home/iu0.jpeg")
 }
 .panel-back-img-2 {
   background-image: url("./home/2chainz.jpg")
