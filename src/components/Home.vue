@@ -52,16 +52,16 @@ export default {
   background-image: url("./home/iu0.jpeg")
 }
 .panel-back-img-2 {
-  background-image: url("./home/2chainz.jpg")
+  background-image: url("./home/twice1.jpg")
 }
 .panel-back-img-3 {
-  background-image: url("./home/kanye.jpg")
+  background-image: url("./home/twice6.jpg")
 }
 .panel-back-img-4 {
-  background-image: url("./home/mosdef.jpg")
+  background-image: url("./home/twice3.jpg")
 }
 .panel-back-img-5 {
-  background-image: url("./home/nicki.jpg")
+  background-image: url("./home/blackpink0.jpeg")
 }
 
 </style>

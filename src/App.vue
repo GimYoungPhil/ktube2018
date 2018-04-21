@@ -8,7 +8,7 @@
       v-bind:class="{ 'ktube-stage-open': open }"
     >
       <button
-        class="btn btn-outline-success btn-toggler"
+        class="btn btn-outline-warning btn-sm btn-toggler"
         type="button"
         v-on:click="toggleOpen"
       >
